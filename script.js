@@ -77,3 +77,17 @@ canvas.width = cw;
 canvas.height = ch;
 
 let frames = 0;
+
+class FallingChar {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  draw(context) {
+    this.value = charArr[Math.floor(Math.random() * (charArr.length - 1))].toUpperCase();
+    this.speed = Math.random() * fontSize * 3 / 4 + fontSize * 3 / 4;
+
+    context.fillStyle = "rgba(0,255,0)";
+  }
+}
