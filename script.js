@@ -92,13 +92,18 @@ class FallingChar {
     context.font = fontSize + "px san-serif";
     context.fillText(this.value, this.x, this.y);
     this.y += this.speed;
+
+    if (this.y > ch) {
+      this.y = Math.random() * ch / 2 - 50;
+      this.x = Math.floor(Math.random() * maxColumns) * fontSize;
+    }
   }
 }
 
 let update = () => {
   if (fallingCharArr.length < maxCharCount) {
     let fallingChar = new FallingChar(Math.floor(Math.random() * maxColumns) * fontSize, Math.random() * ch / 2 - 50);
-    fallingCharArr.push(fgitallingChar);
+    fallingCharArr.push(fallingChar);
   }
 
   context.fillStyle = "rgba(0,0,0,0.05)";
