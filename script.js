@@ -68,10 +68,10 @@ let charArr = [
   "Ц",
 ];
 
-let maxCharCount = 1000;
+let maxCharCount = 350;
 let fallingCharArr = [];
-let fontSize = 15;
-let maxColumns = cw/fontSize;
+let fontSize = 13;
+let maxColumns = cw / fontSize;
 
 canvas.width = cw;
 canvas.height = ch;
