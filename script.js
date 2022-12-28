@@ -96,6 +96,7 @@ class FallingChar {
     if (this.y > ch) {
       this.y = Math.random() * ch / 2 - 50;
       this.x = Math.floor(Math.random() * maxColumns) * fontSize;
+      this.speed = Math.random() * fontSize * 3 / 4 + fontSize * 3 / 4; 
     }
   }
 }
