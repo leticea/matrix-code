@@ -89,5 +89,15 @@ class FallingChar {
     this.speed = Math.random() * fontSize * 3 / 4 + fontSize * 3 / 4;
 
     context.fillStyle = "rgba(0,255,0)";
+    context.font = fontSize + "px san-serif";
+    context.fillText(this.value, this.x, this.y);
+    this.y += this.speed;
   }
 }
+
+let update = () => {
+  if (fallingCharArr.length < maxCharCount) {
+    let FallingChar = new FallingChar(Math.floor(Math.random() * maxColumns) * fontSize, Math.random() * ch / 2 - 50);
+    
+  }
+};
