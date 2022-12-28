@@ -98,6 +98,11 @@ class FallingChar {
 let update = () => {
   if (fallingCharArr.length < maxCharCount) {
     let FallingChar = new FallingChar(Math.floor(Math.random() * maxColumns) * fontSize, Math.random() * ch / 2 - 50);
-    
+    fallingCharArr.push(FallingChar);
+  }
+  context.fillStyle = "rgba(0,0,0,0.05)";
+  context.fillRect(0,0,cw,ch);
+  for (let i = 0; i < fallingCharArr.length && frames % 2 == 0; i++) {
+
   }
 };
