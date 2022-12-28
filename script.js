@@ -86,7 +86,7 @@ class FallingChar {
 
   draw(context) {
     this.value = charArr[Math.floor(Math.random() * (charArr.length - 1))].toUpperCase();
-    this.speed = Math.random() * fontSize * 3 / 4 + fontSize * 3 / 4;
+    this.speed = (Math.random() * fontSize * 3) / 4 + (fontSize * 3) / 4;
 
     context.fillStyle = "rgba(0,255,0)";
     context.font = fontSize + "px san-serif";
@@ -97,12 +97,18 @@ class FallingChar {
 
 let update = () => {
   if (fallingCharArr.length < maxCharCount) {
-    let FallingChar = new FallingChar(Math.floor(Math.random() * maxColumns) * fontSize, Math.random() * ch / 2 - 50);
-    fallingCharArr.push(FallingChar);
+    let fallingChar = new FallingChar(Math.floor(Math.random() * maxColumns) * fontSize, Math.random() * ch / 2 - 50);
+    fallingCharArr.push(fgitallingChar);
   }
-  context.fillStyle = "rgba(0,0,0,0.05)";
-  context.fillRect(0,0,cw,ch);
-  for (let i = 0; i < fallingCharArr.length && frames % 2 == 0; i++) {
 
+  context.fillStyle = "rgba(0,0,0,0.05)";
+  context.fillRect(0, 0, cw, ch);
+  for (let i = 0; i < fallingCharArr.length && frames % 2 == 0; i++) {
+    fallingCharArr[i].draw(context);
   }
+
+  requestAnimationFrame(update);
+  frames++;
 };
+
+update();
