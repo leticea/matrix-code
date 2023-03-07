@@ -85,7 +85,8 @@ class FallingChar {
   }
 
   draw(context) {
-    this.value = charArr[Math.floor(Math.random() * (charArr.length - 1))].toUpperCase();
+    this.value =
+      charArr[Math.floor(Math.random() * (charArr.length - 1))].toUpperCase();
     this.speed = (Math.random() * fontSize * 3) / 4 + (fontSize * 3) / 4;
 
     context.fillStyle = "rgba(0,255,0)";
@@ -96,14 +97,17 @@ class FallingChar {
     if (this.y > ch) {
       this.y = (Math.random() * ch) / 2 - 50;
       this.x = Math.floor(Math.random() * maxColumns) * fontSize;
-      this.speed = (-Math.random() * fontSize * 3) / 4 + (fontSize * 3) / 4; 
+      this.speed = (-Math.random() * fontSize * 3) / 4 + (fontSize * 3) / 4;
     }
   }
-};
+}
 
 let update = () => {
   if (fallingCharArr.length < maxCharCount) {
-    let fallingChar = new FallingChar(Math.floor(Math.random() * maxColumns) * fontSize, Math.random() * ch / 2 - 50);
+    let fallingChar = new FallingChar(
+      Math.floor(Math.random() * maxColumns) * fontSize,
+      (Math.random() * ch) / 2 - 50
+    );
     fallingCharArr.push(fallingChar);
   }
 
